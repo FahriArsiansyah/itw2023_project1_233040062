@@ -85,7 +85,6 @@ html {
 
 /* Tablet */
 @media (max-width: 768px) {
-
   .about-content {
     order: 0;
   }
@@ -168,7 +167,7 @@ html {
   display: flex;
   align-items: center;
   padding: 0 10%;
-  background-image: url(../myportofolio/gallery/Background/back1.jpg);
+  background-image: url(gallery/Background/back1.jpg);
   background-size: cover;
 }
 
@@ -315,7 +314,6 @@ html {
   margin-left: 160px;
   color: #00abf0;
   text-align: center;
-
 }
 .containnerskill {
   display: flex;
@@ -472,8 +470,6 @@ html {
   justify-content: center;
   margin-top: 150px;
 }
-
-
 
 .portofolio-box img {
   border-radius: 10px;
@@ -700,8 +696,6 @@ html {
 }
 
 @media only screen and (max-width: 600px) {
-
-
   .about-content {
     display: block;
   }
@@ -762,8 +756,6 @@ html {
     margin: 300px auto;
   }
 
-
-
   .skill {
     display: flex;
     justify-content: center;
@@ -777,5 +769,4 @@ html {
   #portfolio {
     height: 100%;
   }
-
 }

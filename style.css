@@ -1,0 +1,781 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+  text-decoration: none;
+}
+
+body {
+  background: #081b29;
+  color: #ededed;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.4rem 7%;
+  background-color: rgb(1, 1, 1, 0.8);
+  border-bottom: 1px solid #513c28;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+}
+
+.navbar .navbar-logo {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #00abf0;
+}
+
+.navbar .navbar-nav a {
+  color: #fff;
+  display: inline-block;
+  font-size: 1.3rem;
+  margin: 0 1rem;
+}
+
+.navbar .navbar-nav a:hover {
+  color: #b6895b;
+}
+
+.navbar .navbar-nav a::after {
+  content: '';
+  display: block;
+  padding-bottom: 0.5rem;
+  border-bottom: 0.1rem solid green;
+  transform: scaleX(0);
+  transition: 0.2s linear;
+}
+
+.navbar .navbar-nav a:hover::after {
+  transform: scaleX(0.5);
+}
+
+.navbar .navbar-extra a {
+  color: #fff;
+  margin: 0 0.5rem;
+}
+
+.navbar .navbar-extra a:hover {
+  color: blue;
+}
+
+#hamburger-menu {
+  display: none;
+}
+
+/* Media Queries */
+
+/* Laptop */
+@media (max-width: 1366px) {
+  html {
+    font-size: 75%;
+  }
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+
+  .about-content {
+    order: 0;
+  }
+
+  html {
+    font-size: 62.5%;
+  }
+
+  #hamburger-menu {
+    display: inline-block;
+  }
+
+  .navbar .navbar-nav {
+    position: absolute;
+    top: 100%;
+    right: -100%;
+    background-color: black;
+    width: 30rem;
+    height: 100vh;
+    transition: 0.3s;
+  }
+
+  .navbar .navbar-nav.active {
+    right: 0;
+  }
+
+  .navbar .navbar-nav a {
+    color: #00abf0;
+    display: block;
+    margin: 1.5rem;
+    padding: 0.5rem;
+    font-size: 2rem;
+  }
+
+  .navbar .navbar-nav a::after {
+    transform-origin: 0 0;
+  }
+
+  .navbar .navbar-nav a:hover:after {
+    transform: scaleX(0.2);
+  }
+}
+
+/* HandPhone */
+@media screen and (max-width: 450px) {
+  html {
+    font-size: 55%;
+  }
+  .about {
+    margin-top: 200px;
+    margin-bottom: 200px;
+  }
+  .about-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+  .about-text {
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    /* margin-left: 50px; */
+    align-items: center;
+    padding: 30px;
+  }
+  .skill {
+    margin-bottom: -380px;
+  }
+  .portfolio {
+    margin-bottom: -60px;
+  }
+}
+
+/* home */
+.home {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 0 10%;
+  background-image: url(../myportofolio/gallery/Background/back1.jpg);
+  background-size: cover;
+}
+
+.home-content {
+  max-width: 600px;
+}
+
+.home-content h1 {
+  font-size: 56px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.home-content h3 {
+  font-size: 32px;
+  font-weight: 700;
+  color: #00abf0;
+}
+
+.home-content p {
+  font-size: 16px;
+  margin: 20px 0 40px;
+}
+
+.home-content .btn-box {
+  display: flex;
+  justify-content: space-between;
+  width: 345px;
+  height: 50px;
+}
+
+.btn-box a {
+  position: relative;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 150px;
+  height: 100%;
+  background: #00abf0;
+  border: 2px solid #00abf0;
+  border-radius: 8px;
+  font-size: 19px;
+  color: #081b29;
+  text-decoration: none;
+  font-weight: 600;
+  letter-spacing: 1px;
+  z-index: 1;
+  overflow: hidden;
+  transition: 0.5s;
+}
+
+.btn-box a:hover {
+  color: #00abf0;
+}
+
+.btn-box a:nth-child(2) {
+  background: transparent;
+  color: #00abf0;
+}
+
+.btn-box a:nth-child(2):hover {
+  color: #081b29;
+}
+.btn-box a:nth-child(2)::before {
+  background: #00abf0;
+}
+
+.btn-box a::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background: #081b29;
+  z-index: -1;
+  transition: 0.5s;
+}
+
+.btn-box a:hover::before {
+  width: 100%;
+}
+
+.home-sci {
+  position: absolute;
+  bottom: 40px;
+  width: 170px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.home-sci a {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  background: transparent;
+  border: 2px solid #00abf0;
+  border-radius: 50%;
+  font-size: 20px;
+  color: #00abf0;
+  text-decoration: none;
+}
+
+.aboutimage img {
+  width: 200px;
+  height: auto;
+  border-radius: 50%;
+  border: #00abf0 solid 3px;
+}
+
+.about {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.about-text {
+  font-size: 1.5rem;
+}
+
+.about-content {
+  gap: 3rem;
+  display: flex;
+  max-width: 85%;
+  align-items: center;
+  justify-content: center;
+}
+
+.skill {
+  height: 100vh;
+  display: flex;
+  background-color: #081b29;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.skill-header h1 {
+  position: absolute;
+  margin-top: -270px;
+  margin-left: 160px;
+  color: #00abf0;
+  text-align: center;
+
+}
+.containnerskill {
+  display: flex;
+  position: relative;
+  max-width: 350px;
+  width: 100%;
+  background: #fff;
+  margin: 0 15px;
+  padding: 10px 20px;
+  border-radius: 7px;
+  color: black;
+}
+
+.containnerskill .skill-box {
+  width: 100%;
+  margin: 25px 0;
+}
+
+.skill-box .title {
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+  color: #333;
+}
+
+.skill-box .skill-bar {
+  height: 8px;
+  width: 100%;
+  border-radius: 6px;
+  margin-top: 6px;
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.skill-bar .skill-per {
+  position: relative;
+  display: block;
+  height: 100%;
+  width: 70%;
+  border-radius: 6px;
+  background: #00abf0;
+  animation: progress 0.4s ease-in-out forwards;
+}
+
+.skill-per.css {
+  width: 50%;
+}
+
+.skill-per.js {
+  width: 45%;
+}
+
+@keyframes progress {
+  0% {
+    width: 0;
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.skill-per .tooltip {
+  position: absolute;
+  right: -14px;
+  top: -28px;
+  font-size: 9px;
+  font-weight: 500;
+  color: white;
+  padding: 2px 6px;
+  border-radius: 3px;
+  background: #00abf0;
+  z-index: 1;
+}
+
+.tooltip::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: -2px;
+  height: 10px;
+  width: 10px;
+  z-index: -1;
+  background-color: #00abf0;
+  transform: translateX(-50%) rotate(45deg);
+}
+
+.portofolio {
+  background: var(--second-bg-color);
+  position: relative;
+}
+
+/* .h2 {
+  color: 
+}
+.portofolio h2 {
+  margin-bottom: 4rem;
+  position: relative;
+  min-height: 100vh;
+  padding: 50px 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background: red;
+  margin-left: 150px;
+} */
+
+.portfolio h2 {
+  color: #fff;
+  margin-top: 40px;
+  text-align: center;
+  align-items: center;
+  display: flex;
+  margin-top: 100px;
+  margin-left: 50%;
+  position: absolute;
+}
+
+.portfolio h2 span {
+  color: #00abf0;
+}
+
+.portofolio-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: center;
+  gap: 2.5rem;
+  width: 100%;
+  height: 100vh;
+  background-image: url(./gallery/Background/bg4.png);
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  display: flex;
+  justify-content: space-between;
+  top: 0;
+  padding: 1rem 0;
+}
+
+.portofolio-container h2 {
+  color: red;
+  margin-bottom: 500px;
+  text-align: center;
+  display: flex;
+}
+
+.portofolio-container .portofolio-box {
+  position: relative;
+  border-radius: 2rem;
+  box-shadow: 0 0 1rem var(--bg-color);
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  margin-top: 150px;
+}
+
+
+
+.portofolio-box img {
+  border-radius: 10px;
+  width: 90%;
+  transition: 0.5s ease;
+}
+
+.portofolio-box:hover img {
+  transform: scale(1.1);
+}
+.portofolio-box .portofolio-layer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient (rgba(0, 0, 0, 0.1), var(--main-color));
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  padding: 0 5rem;
+  transform: translateY(100%);
+  transition: 5s ease;
+  margin-top: 100px;
+}
+
+.portofolio-box:hover .portofolio-layer {
+  transform: translateY(0);
+}
+.portofolio-layer h4 {
+  font-size: 2rem;
+  color: #00abf0;
+}
+
+.portofolio-layer p {
+  font-size: 1rem;
+  margin: 0.2rem 0 1rem;
+  color: whitesmoke;
+}
+
+.portofolio-layer a {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 5rem;
+  height: 5rem;
+  background: var(--text-color);
+  border-radius: 50%;
+}
+
+.portofolio-layer a i {
+  font-size: 1rem;
+  color: var(--second-bg-color);
+}
+
+.contact {
+  position: relative;
+  min-height: 100vh;
+  padding: 50px 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  /* background: url(gallery/Background/back3.jpg);  */
+  background-image: url(./gallery/Background/back3.jpg);
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.contact .content {
+  max-width: 600px;
+  text-align: center;
+}
+
+.contact .content h2 {
+  font-size: 36px;
+  font-weight: 500;
+  color: #fff;
+}
+
+.contact .content p {
+  font-weight: 300;
+  color: #fff;
+}
+
+.container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.container .contactInfo {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+}
+
+.container .contactInfo .box {
+  position: relative;
+  padding: 20px 0;
+  display: flex;
+  justify-content: start;
+  /* background-color: blue; */
+  margin-right: 50rem;
+}
+
+.container .contactInfo .box .icon {
+  min-width: 60px;
+  height: 60px;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  font-size: 22px;
+  background-color: red;
+}
+
+.container .contactInfo .box .text {
+  display: flex;
+  margin-left: 20px;
+  font-size: 16px;
+  color: #fff;
+  flex-direction: column;
+  font-weight: 300;
+}
+
+.container .contactInfo .box .text h3 {
+  font-weight: 500;
+  color: #00abf0;
+}
+
+.contactForm {
+  width: 40%;
+  padding: 40px;
+  background: #fff;
+}
+
+.contactForm h2 {
+  font-size: 30px;
+  color: #333;
+  font-weight: 500;
+}
+
+.contactForm .inputBox {
+  position: relative;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.contactForm .inputBox input,
+.contactForm .inputBox textarea {
+  width: 100%;
+  padding: 5px 0;
+  font-size: 16px;
+  margin: 10px 0;
+  border: none;
+  border-bottom: 2px solid #333;
+  outline: none;
+  resize: none;
+}
+
+.contactForm .inputBox span {
+  position: absolute;
+  left: 0;
+  padding: 5px 0;
+  font-size: 16px;
+  margin: 10px 0;
+  pointer-events: none;
+  transition: 0.5s;
+  color: #666;
+}
+
+.contactForm .inputBox input:focus ~ span,
+.contactForm .inputBox input:valid ~ span,
+.contactForm .inputBox textarea:focus ~ span,
+.contactForm .inputBox textarea:valid ~ span {
+  color: #00abf0;
+  font-size: 12px;
+  transform: translateY(-20px);
+}
+
+.contactForm .inputBox input[type='submit'] {
+  width: 100px;
+  background: #00abf0;
+  color: #fff;
+  cursor: pointer;
+  padding: 10px;
+  font-size: 18px;
+  border-radius: 5px;
+}
+
+@media (max-width: 991px) {
+  .contact {
+    padding: 50px;
+  }
+  .container {
+    flex-direction: column;
+  }
+  .container .contactInfo {
+    margin-bottom: 40px;
+  }
+  .container .contactInfo,
+  .contactForm {
+    width: 100%;
+  }
+}
+
+.footer {
+  background: #081b29;
+  padding: 10px;
+  margin: 10px;
+}
+
+.footer .copy {
+  color: #eaeaea;
+  text-align: center;
+  font-size: 12px;
+}
+
+@media only screen and (max-width: 600px) {
+
+
+  .about-content {
+    display: block;
+  }
+  .aboutimage img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    margin-top: 50px;
+  }
+  .skill-header h1 {
+    text-align: center;
+    position: absolute;
+    left: 30px;
+    font-size: 20px;
+  }
+  .skill {
+    display: block;
+  }
+  .portofolio-container {
+    display: block;
+    margin-bottom: 300px;
+  }
+  .portofolio-container .portofolio-box {
+    margin-top: 0;
+  }
+  .portofolio-box img {
+    max-width: 85%;
+  }
+  .portofolio-box {
+    margin-bottom: 50px;
+  }
+  .portfolio h2 {
+    position: relative;
+    /* top: 150px; */
+    right: 40px;
+    font-size: 20px;
+  }
+
+  .portofolio-layer p {
+    font-size: 2rem;
+  }
+
+  .about {
+    margin: 300px 0;
+  }
+  .about h2 {
+    font-size: 20px;
+  }
+  .about h3 {
+    font-size: 20px;
+  }
+  .about p {
+    font-size: 15px;
+  }
+
+  .skill {
+    margin: 300px auto;
+  }
+
+
+
+  .skill {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .portfolio {
+    margin: 20px 0;
+  }
+
+  #portfolio {
+    height: 100%;
+  }
+
+}
